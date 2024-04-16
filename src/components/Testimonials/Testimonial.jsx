@@ -14,8 +14,8 @@ const Testimonial = () => {
   const clients = [
     {
       img: profilePic1,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+      name:"Nathaniel Heutmaker",
+      review:"Hina was easy to work with. She was very personable and did the job quickly. She wanted me to be able to leverage her services for the betterment of my company and website in order to take full advantage of the opportunities of the tools that I had chosen and advised me on how to do so. She understood my goals with ease and was a delight to work with.",
     },
     {
       img: profilePic2,
@@ -54,8 +54,9 @@ const Testimonial = () => {
           return (
             <SwiperSlide key={index}>
               <div className="testimonial">
-                <img src={client.img} alt="" />
+                <img src={client?.img} alt="" />
                 <span>{client.review}</span>
+                <div style={{marginTop:'10px'}}>{client?.name}</div>
               </div>
             </SwiperSlide>
           );
