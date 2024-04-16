@@ -5,6 +5,8 @@ import Fiverr from "../../img/fiverr.png";
 import Amazon from "../../img/amazon.png";
 import Shopify from "../../img/Shopify.png";
 import Facebook from "../../img/Facebook.png";
+import Freelancer from '../../img/freelancer.png';
+import Bark from '../../img/bark.png';
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import {Link} from 'react-scroll'
@@ -21,18 +23,11 @@ const Works = () => {
         <div className="awesome">
           {/* dark Mode */}
           <span style={{ color: darkMode ? "white" : "" }}>
-            Works for All these
+            Works on All these
           </span>
-          <span>Brands & Clients</span>
-          <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
-            <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
-            <br />
-            y dummy text of printingLorem
-            <br />
-            ispum is simpley dummy text of printing
+          <span>Platforms for Clients</span>
+          <spane className="workSpan">
+          Delivering versatile services across a spectrum of platforms, including Upwork, Freelancer, Fiverr, Amazon, and Bark, catering to diverse client needs. From freelancing hubs to e-commerce giants, I ensure seamless execution and optimal results, showcasing adaptability and expertise in every project within my portfolio.
           </spane>
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
@@ -63,10 +58,10 @@ const Works = () => {
             <img src={Amazon} alt="" />
           </div>{" "}
           <div className="w-secCircle">
-            <img src={Shopify} alt="" />
+            <img src={Freelancer} className="platformImg" alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
+            <img src={Bark} className="platformImg" alt="" />
           </div>
         </motion.div>
         {/* background Circles */}

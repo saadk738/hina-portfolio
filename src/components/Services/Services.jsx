@@ -7,6 +7,7 @@ import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import Resume from './resume.pdf';
+import { Link } from "react-scroll";
 
 const Services = () => {
   // context
@@ -32,9 +33,13 @@ const Services = () => {
         I specialize in crafting captivating web experiences.
         <br /> With a keen eye for detail and a commitment to quality.
         </span>
-        <a href={Resume} download>
-          <button className="button s-button">Download CV</button>
-        </a>
+        {/* <a href={Resume} download> */}
+          <button className="button s-button">
+          <Link to="contact" spy={true} smooth={true}>
+                Contact Me
+          </Link>
+          </button>
+        {/* </a> */}
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
       {/* right */}
@@ -47,7 +52,7 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"UX/UI"}
+            heading={"UX/UI Design Development"}
             detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
           />
         </motion.div>
