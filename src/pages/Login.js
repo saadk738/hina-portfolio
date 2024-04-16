@@ -55,7 +55,7 @@ export default function Login() {
                     variant='outlined'
                     size='normal'
                     value={password}
-                    type='password'
+                    // type='password'
                     onChange={(e) => setPassword((e.target.value))}
                     fullWidth
                 />
