@@ -2,12 +2,14 @@ import React from "react";
 import Toggle from "../Toggle/Toggle";
 import "./Navbar.css";
 import { Link } from "react-scroll";
-const navbar = () => {
+import { useNavigate } from "react-router-dom";
+const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="n-wrapper" id="Navbar">
       {/* left */}
       <div className="n-left">
-        <div className="n-name">Hina Siddique</div>
+        <div className="n-name" onClick={()=>navigate('/Login')} >Hina Siddique</div>
         <Toggle />
       </div>
       {/* right */}
@@ -49,4 +51,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

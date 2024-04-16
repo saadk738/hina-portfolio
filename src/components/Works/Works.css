@@ -143,4 +143,8 @@
     left: 8rem!important;
   }
 
+  .workSpan{
+    max-width: 90vw;
+  }
+
 }

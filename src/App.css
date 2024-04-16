@@ -33,10 +33,50 @@
     border: 1px solid var(--orange);
     color: var(--orange);
   }
+
+  /* Login Screen Styling */
+
+  .loginPage{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loginBox{
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 1px 5px 15px lightgray;
+    border-radius: 20px;
+    padding: 2%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .loginHeading{
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .loginWarning{
+    font-size: 14px;
+    margin-top: -10px;
+    color: red ;
+    margin-bottom: 20px;
+  }
+
+
+
   @media screen and (max-width: 480px) {
     .App {
       padding: 0.5rem 1rem;
+    }
 
+    .loginBox{
+      box-shadow: none;
     }
   }
 
