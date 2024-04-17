@@ -3,7 +3,7 @@ import "./Testimonial.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { Pagination } from "swiper";
+import { Autoplay, Pagination,  } from "swiper";
 import "swiper/css/pagination";
 import profilePic1 from "../../img/profile1.jpg";
 import profilePic2 from "../../img/profile2.jpg";
@@ -19,8 +19,9 @@ const Testimonial = () => {
     },
     {
       img: profilePic2,
+      name:"Simone Martins",
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "Hina, is an excellent professional. She designed a beautiful flyer for my business with an outstanding artwork and in a timely manner. Thank you, we will working together in my next endeavour and I am also recommending you to my fellow business owners",
     },
     {
       img: profilePic3,
@@ -46,10 +47,13 @@ const Testimonial = () => {
       </div>
       <Swiper
         // install Swiper modules
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 500 }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
        >
         {clients.map((client, index) => {
           return (
