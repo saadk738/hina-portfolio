@@ -49,12 +49,13 @@ const Testimonial = () => {
         modules={[Pagination]}
         slidesPerView={1}
         pagination={{ clickable: true }}
+        autoplay={{ delay: 500 }}
       >
         {clients.map((client, index) => {
           return (
             <SwiperSlide key={index}>
               <div className="testimonial">
-                <img src={client?.img} alt="" />
+                {/* <img src={client?.img} alt="" /> */}
                 <span>{client.review}</span>
                 <div style={{marginTop:'10px'}}>{client?.name}</div>
               </div>
