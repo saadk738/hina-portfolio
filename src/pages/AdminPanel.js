@@ -28,11 +28,10 @@ export default function AdminPanel() {
     const usersSnapshot = await getDocs(usersCollectionRef);
     const usersList = usersSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id}))
     const sortedUsers = sortUsersByDateDescending(usersList)
-    console.log(sortedUsers)
     setUsersData(sortedUsers);
     setTotalUsers(sortedUsers.length);
   }
-
+x
   function sortUsersByDateDescending(users) {
     // Use the sort method to sort the users array
     users.sort((a, b) => {
