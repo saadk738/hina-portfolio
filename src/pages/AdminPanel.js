@@ -31,7 +31,7 @@ export default function AdminPanel() {
     setUsersData(sortedUsers);
     setTotalUsers(sortedUsers.length);
   }
-x
+
   function sortUsersByDateDescending(users) {
     // Use the sort method to sort the users array
     users.sort((a, b) => {
