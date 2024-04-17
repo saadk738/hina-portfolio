@@ -24,7 +24,7 @@ const Contact = () => {
     setOpenSnack(false);
     setSnackMsg('');
     setSeverity('error');
-}
+  }
 
   function getCurrentDate() {
     const currentDate = new Date();
@@ -32,15 +32,16 @@ const Contact = () => {
     const day = String(currentDate.getDate()).padStart(2, '0'); // Add leading zero if needed
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based
     const year = currentDate.getFullYear();
-  
+
     // Format the date as "DD-MM-YYYY"
     const formattedDate = `${day}-${month}-${year}`;
-  
+
     return formattedDate;
   }
-  
 
-  
+
+
+
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -48,36 +49,72 @@ const Contact = () => {
       name,
       email,
       message,
-      isProcessed:"false",
+      isProcessed: "false",
       date: getCurrentDate(),
     }
 
-    if(name && email && message){
+    if (name && email && message) {
       setIsLoading(true);
+
+
+
+      // sending email 
+      const data = {
+        service_id: 'service_x9pcopn',
+        template_id: 'template_dfpec7v',
+        user_id: 'cqvvxyDj2QRuaiCpL',
+        template_params: {
+          name,
+          email,
+          message,
+          'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
+        }
+      };
+
       try {
-        await addDoc(usersCollectionRef, userObj);
-        setSnackMsg("Thanks for Contacting me");
-        setSeverity("success");
-        setOpenSnack(true)
-        setIsLoading(false)
-        setEmail('')
-        setName('')
-        setMessage('')
-        
+        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          // storing data in firestore database
+          try {
+            await addDoc(usersCollectionRef, userObj);
+            setSnackMsg("Thanks for Contacting me");
+            setSeverity("success");
+            setOpenSnack(true)
+            setIsLoading(false)
+            setEmail('')
+            setName('')
+            setMessage('')
+
+          } catch (error) {
+            console.log(error.text);
+            setSnackMsg(error.message)
+            setOpenSnack(true)
+          }
+        } else {
+          throw new Error('Failed to send email');
+        }
       } catch (error) {
-        console.log(error.text);
-        setSnackMsg(error.message)
-        setOpenSnack(true)
+        console.error('Error sending email:', error);
+        alert('Oops... ' + JSON.stringify(error));
       }
-    }else{
+
+
+    } else {
       setSnackMsg("Required Fields are missing.");
       setOpenSnack(true);
     }
-   
 
-   
 
-    
+
+
+
 
   };
 
@@ -117,8 +154,8 @@ const Contact = () => {
           ></div>
         </form>
       </div>
-    <Snack msg={snackMsg} open={openSnack} onClose={handleCloseSnack} severity={severity} />
-    <Loader isLoading={isLoading} />
+      <Snack msg={snackMsg} open={openSnack} onClose={handleCloseSnack} severity={severity} />
+      <Loader isLoading={isLoading} />
     </div>
   );
 };
