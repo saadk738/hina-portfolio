@@ -27,8 +27,29 @@ export default function AdminPanel() {
   const getUsers = async () => {
     const usersSnapshot = await getDocs(usersCollectionRef);
     const usersList = usersSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id}))
-    setUsersData(usersList);
-    setTotalUsers(usersList.length)
+    const sortedUsers = sortUsersByDateDescending(usersList)
+    console.log(sortedUsers)
+    setUsersData(sortedUsers);
+    setTotalUsers(sortedUsers.length);
+  }
+
+  function sortUsersByDateDescending(users) {
+    // Use the sort method to sort the users array
+    users.sort((a, b) => {
+      // Extract day, month, and year from date strings
+      const [dayA, monthA, yearA] = a.date.split('-').map(Number);
+      const [dayB, monthB, yearB] = b.date.split('-').map(Number);
+  
+      // Create Date objects for comparison
+      const dateA = new Date(yearA, monthA - 1, dayA);
+      const dateB = new Date(yearB, monthB - 1, dayB);
+  
+      // Compare the dates in descending order
+      return dateB - dateA;
+    });
+  
+    // Return the sorted users array
+    return users;
   }
 
   useEffect(()=>{
