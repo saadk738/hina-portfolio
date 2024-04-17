@@ -52,7 +52,7 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"UX/UI Design Development"}
+            heading={"UX/UI Web & Mobile Design"}
             detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
           />
         </motion.div>
@@ -64,8 +64,8 @@ const Services = () => {
         >
           <Card
             emoji={Glasses}
-            heading={"Full Stack Developer"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express, Next JS, Angular JS, Python, Django, PHP, Laravel"}
+            heading={"Full Stack Web Developer"}
+            detail={"HTML/CSS, JavaScript, ReactJs, NodeJs, ExpressJs, NextJs, AngularJs, Python, Django, PHP, Laravel, Tailwind CSS"}
           />
         </motion.div>
         {/* 3rd */}
