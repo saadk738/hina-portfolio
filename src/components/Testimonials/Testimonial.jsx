@@ -25,13 +25,9 @@ const Testimonial = () => {
     },
     {
       img: profilePic3,
+      name:"Daniel Herrada",
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
-    },
-    {
-      img: profilePic4,
-      review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "I had the pleasure of working with Hina on a project recently, and I couldn't be more impressed with her exceptional services. From start to finish, Hina exhibited a level of professionalism, creativity, and dedication that exceeded my expectations.",
     },
   ];
 
@@ -51,8 +47,8 @@ const Testimonial = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
+          delay: 5000,
+          disableOnInteraction: true,
         }}
        >
         {clients.map((client, index) => {

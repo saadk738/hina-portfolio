@@ -3,6 +3,7 @@ import "./Intro.css";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
 import boy from "../../img/boy.png";
+import girl from "../../img/girl.png";
 import figma from "../../img/figma.png";
 import glassesimoji from "../../img/glassesimoji.png";
 import thumbup from "../../img/thumbup.png";
@@ -49,7 +50,10 @@ const Intro = () => {
       <div className="i-right">
         <img src={Vector1} alt="" />
         <img src={Vector2} alt="" />
-        {/* <img src={boy} alt="" /> */}
+        <img src={girl} alt=""
+         width="300px"
+         style={{marginLeft:'-50px'}}
+        />
         {/* animation */}
         <motion.img
           initial={{ left: "-36%" }}
@@ -57,7 +61,7 @@ const Intro = () => {
           transition={transition}
           src={glassesimoji}
           alt=""
-          width='120px'
+          // width='120px'
         />
 
         <motion.div
@@ -69,7 +73,7 @@ const Intro = () => {
           <FloatinDiv img={crown} text1="Web" text2="Developer" />
         </motion.div>
 
-        
+{/*         
         <motion.div
           initial={{ top: "-54%", left: "74%" }}
           whileInView={{ left: "58%" }}
@@ -77,11 +81,11 @@ const Intro = () => {
           className="floating-div"
         >
           <FloatinDiv img={thumbup} imgWidth='80px' text1="E-Commerce" text2=" Developer" />
-        </motion.div>
+        </motion.div> */}
 
         {/* animation */}
         <motion.div
-          initial={{ left: "9rem", top: "18rem" }}
+          initial={{ left: "1%", top: "75%" }}
           whileInView={{ left: "0rem" }}
           transition={transition}
           className="floating-div"
